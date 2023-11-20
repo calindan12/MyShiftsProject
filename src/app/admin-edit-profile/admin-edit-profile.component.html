@@ -1,0 +1,42 @@
+<top-menu></top-menu>
+
+<div class="main-area">
+    <div class="content-area">
+        <div class="header">
+            <h1>Edit Profile - Admin</h1>
+            <hr>
+        </div>
+        <div class="container">
+            <div class="form-area">
+                <form [formGroup] = 'editProfileIfAdmin' (ngSubmit) = editProfile()>
+                    <div class="label-area">
+                        <label>First Name: </label>
+                    </div>
+                    <input type="text" formControlName="fname">
+                
+                    <div class="label-area">
+                        <label>Last Name:</label>
+                    </div>
+                    <input type="text" formControlName="lname">
+                
+                    <div class="label-area">
+                        <label>Email:</label>
+                    </div>
+                    <input type="email" formControlName="email">
+
+                    <div class="label-area">
+                        <label>Password: </label>
+                    </div>
+                    <input type="password" formControlName="password" >
+
+
+                   
+                  <button type="submit" value="Submit" >Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

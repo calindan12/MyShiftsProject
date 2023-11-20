@@ -1,0 +1,54 @@
+<top-menu></top-menu>
+
+
+<div class="container-fluid">
+  <div class="main">
+      <div class="card col-sm-6">
+          <div class="card-body">
+              <h1>Add Shift</h1>
+              <br>
+              <form [formGroup] = 'addShiftForm' (ngSubmit) = 'addShift()'>
+                
+                <!-- <label for="nameShift">Shift Name: </label><br> -->
+                <span *ngIf="nameShift?.touched && nameShift.errors?.['required']">Required</span>
+                <input type="text" formControlName="nameShift" placeholder="Shift Name..." (input)="checkShiftName()" (input) = "shiftNameValidator()" class="form-control"><br><br>
+                <p *ngIf="param">Exista un shift cu numele acesta</p>
+
+
+
+                <!-- <label for="dateShift">Shift Date: </label><br> -->
+                <span *ngIf="dateShift?.touched && dateShift.errors?.['required']">Required</span>
+                <input type="date" formControlName="dateShift" class="form-control"><br><br>
+
+
+                <!-- <label for="startTime">Start Time: </label><br> -->
+                <span *ngIf="startTime?.touched && startTime.errors?.['required']">Required</span>
+                <input type="time" formControlName="startTime" class="form-control"><br><br>
+
+
+                <!-- <label for="endTime">End Time: </label><br> -->
+                <span *ngIf="endTime?.touched && endTime.errors?.['required']">Required</span>
+                <input type="time" formControlName="endTime" class="form-control"><br><br>
+
+
+                <!-- <label for="wage">Hourly Wage: </label><br> -->
+                <span *ngIf="wage?.touched && wage.errors?.['required']">Required</span>
+                <input type="text" formControlName="wage" placeholder="Wage..." class="form-control"><br><br>
+
+                
+
+                <!-- <label for="place">Shift place: </label><br> -->
+                <mat-form-field>
+                    <mat-label>Shift place</mat-label>
+                    <mat-select  formControlName="place">
+                      <mat-option *ngFor="let place of places" [value]="place.value">
+                        {{place.viewValue}}
+                      </mat-option>
+                    </mat-select>
+                </mat-form-field><br>
+                <button type="submit" value="Submit" [disabled]="addShiftForm.invalid || param" class="addShift">Add Shift</button>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>

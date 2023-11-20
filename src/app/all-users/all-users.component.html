@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<top-menu></top-menu>
+<!-- <div class="users-display-area"> -->
+    <table id="shifts">
+      <thead>
+        <tr>
+          <th>First Name: </th>
+          <th>Last Name: </th>
+          <th>Email: </th>
+          <th>Password: </th>
+          <th>Actions: </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{user.fname}}</td>
+          <td>{{user.lname}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.password}}</td>
+          <div>
+            <button class="btn-edit"  routerLink = "/admin/edit-profile/{{user.uid}}"><i class="fa-solid fa-user-pen"></i></button>
+            <button class="btn-delete" (click) = "deleteUser(user.uid)"><i class="fa-solid fa-user-xmark"></i></button>
+            <button class="btn-show"  routerLink = "/admin/show-shifts/{{user.uid}}"><i class="fa-sharp fa-solid fa-eye"></i></button>
+          </div>
+        </tr>
+      </tbody>
+      
+    </table>
+<!-- </div> -->
+

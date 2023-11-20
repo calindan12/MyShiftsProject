@@ -1,0 +1,46 @@
+<top-menu></top-menu>
+<table id="shifts">
+  <tr>
+    <th>User Name</th>
+    <th>User Id</th>
+    <th>Shift Information</th>
+    <th>Actions</th>
+  </tr>
+  <tr *ngFor="let el of shifts">
+    <td>{{el.fname}}</td>
+    <td>{{el.uid}}</td>
+    <td>
+      <table>
+        <tr *ngFor="let shift of el.shifts">
+          <td>
+            <p>Shift Id: {{shift.id}}</p>
+            <p>Date: {{shift.dateShift}}</p>
+            <p>Start Time: {{shift.startTime}}</p>
+            <p>End Time: {{shift.endTime}}</p>
+            <p>Price: {{shift.wage}}</p>
+            <p>Place: {{shift.place}}</p>
+            <p>Shift Name: {{shift.nameShift}}</p>
+          </td>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table>
+        <tr *ngFor="let shift of el.shifts">
+          <td>
+            <button (click)="deleteShift(el.uid, shift.id)">Delete Shift</button>
+            <button [routerLink]="'/admin/edit-shift/' + shift.id">Edit Shift</button>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+
+
+
+
+
+
+

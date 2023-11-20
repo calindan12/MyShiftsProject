@@ -1,0 +1,49 @@
+<top-menu></top-menu>
+<div class="container-fluid">
+    <div class="main">
+        <div class="card col-sm-6">
+            <div class="card-body">
+                <h5>Edit Shift - Admin</h5>
+                <br>
+                <form [formGroup] = 'editShiftFormAdmin' (ngSubmit) = editShiftIfAdmin()>
+                    <div class="row">
+                        <div class="form-group col-md">
+                            <input type="date" name ="created" formControlName="ecreated" placeholder="Select date" class="form-control">
+                        </div>
+                        <div class="form-group col-md">
+                            <input type="time" name="start" formControlName="estart" placeholder="Select start time" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md">
+                            <input type="time" name="end" formControlName="eend" placeholder="Select end time" class="form-control">
+                        </div>
+                        <div class="form-group col-md">
+                            <input type="number" name="price" formControlName="eprice" placeholder="Enter hourly wage" class="form-control">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md">
+                            <mat-form-field>
+                                <mat-label>Shift place</mat-label>
+                                <mat-select  formControlName="eplace">
+                                  <mat-option *ngFor="let place of places" [value]="place.value">
+                                    {{place.viewValue}}
+                                  </mat-option>
+                                </mat-select>
+                            </mat-form-field><br>
+                        </div>
+                        <div class="form-group col-md">
+                            <input type="text" name="shift_name" formControlName="eshift_name" placeholder="Enter shift name" class="form-control">
+                        </div>
+                    </div>
+                    <div class="btn-save-cancel">
+                        <button type="submit" class="btn btn-success">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+

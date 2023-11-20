@@ -1,0 +1,72 @@
+<div class="main-area">
+    <div class="content-area">
+        <div class="header">
+            <h1>Registration Page</h1>
+            <hr>
+        </div>
+        <div class="container">
+            <div class="form-area">
+                <form [formGroup] = 'registerForm' (ngSubmit) = register()>
+                    <div class="label-area">
+                        <label>First Name: </label>
+                        <span *ngIf="fname?.touched && fname.errors?.['required']">Required</span>
+                        <span *ngIf="fname.errors?.['pattern']">Only letters are allowed(min 2 characters)</span>
+                    </div>
+                    <input type="text" formControlName="fname">
+                
+                    <div class="label-area">
+                        <label>Last Name:</label>
+                        <span *ngIf="lname?.touched && lname.errors?.['required']">Required</span>
+                        <span *ngIf="lname.errors?.['pattern']">Only letters are allowed(min 2 characters)</span>
+                    </div>
+                    <input type="text" formControlName="lname">
+                
+                    <div class="label-area">
+                        <label>Email:</label>
+                        <span *ngIf="email?.touched && email.errors?.['required']">Required</span>
+                        <span *ngIf="email?.dirty && email.errors?.['invalidEmail']">Incorrect format email</span>
+                    </div>
+                    <input type="email" formControlName="email">
+
+
+                    <div class="label-area">
+                        <label>Age:</label><br>
+                        <span *ngIf="age?.touched && age.errors?.['required']">Required</span>
+                        <span *ngIf="age?.touched && registerForm.get('age').hasError('ageRange')">Invalid Age</span>
+                    </div>
+                    <input type="number" formControlName="age"><br><br>
+
+
+                    <div class="label-area">
+                        <label>Password: </label>
+                        <span *ngIf="password.touched && password.errors?.['required']">Required</span>
+                        <span *ngIf="password?.dirty && password.errors?.['invalidPassword']">Password must contain at least 8 characters, at least one uppercase letter, one lowercase letter, one number, and one special character</span>
+                    </div>
+                    <input type="password" formControlName="password" >
+
+
+                    <div class="label-area">
+                        <label>Retype Password: </label>
+                        <span *ngIf="registerForm.controls['retypedPassword']?.invalid && registerForm.controls['retypedPassword']?.touched && !registerForm.controls['retypedPassword'].value">Required</span>
+                        <span *ngIf="registerForm.controls['retypedPassword']?.touched && (registerForm.controls['retypedPassword'].value != registerForm.controls['password'].value)">Passwords don't match</span>
+                        <!-- <span *ngIf="retypedPassword?.dirty && retypedPassword.errors?.['retypedPasswordError']">Passwords don't match</span> -->
+
+                    </div>
+                    <input type="password" formControlName="retypedPassword">
+
+        
+                    <button type="submit" value="Submit" [disabled]="registerForm.invalid || registerForm.controls['retypedPassword'].value != registerForm.controls['password'].value" [class.btn-search-disabled]="registerForm.invalid || registerForm.controls['retypedPassword'].value != registerForm.controls['password'].value">Submit</button><br>
+
+                    <div>
+                        <span #val *ngIf="val == true">Account already exists</span>
+                    </div>
+                </form>
+                <p>Already have an account?<a routerLink ="/user/login" routerLinkActive ="active-link">Login</a><br></p>
+                <p>Forgot password?<button class="pswdF" (click)="forgotPassword()">Click here!</button><br></p>
+                <app-forgot-password *ngIf="passwordForgotten"></app-forgot-password>
+
+            </div>
+        </div>
+    </div>
+</div>
+

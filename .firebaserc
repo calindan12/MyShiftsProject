@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "shifts-2-28369": {
+      "hosting": {
+        "myShifts": [
+          "shifts-2-28369"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "shifts-2-28369"
+  }
+}

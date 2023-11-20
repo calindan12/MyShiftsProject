@@ -1,0 +1,25 @@
+<!-- <div class="ekart--top--bar">
+    <a href="#">Help</a>
+    <a href="#">Exchange & Returns</a>
+    <a href="#">Order Tracker</a>
+    <a *ngIf='!currentUser' routerLink ="signup" routerLinkActive ="active-link">SignUp</a>
+    <a *ngIf='!currentUser' routerLink ="login" routerLinkActive ="active-link">Login</a>
+    <a href="" *ngIf="currentUser" (click)="logout()">Logout</a>
+    <a href="" *ngIf="currentUser">Welcome {{currentUser.fname}}</a>
+</div> -->
+
+
+<div class="container">
+    <div class="ekart--top--bar">
+        <a href="#" routerLink = "/home" routerLinkActive="active-link">Your Shifts</a>
+        <a href="#" routerLink = "/addShift" routerLinkActive="active-link">Add Shift</a>
+        <a *ngIf="currentUser['isAdmin'] == false" href="#" routerLink = "/seeSalaries" routerLinkActive="active-link">See Your Salaries</a>
+        <a *ngIf="currentUser['isAdmin'] == true" href="#" routerLink = "/allSalaries" routerLinkActive="active-link">See All Salaries</a>
+        <a *ngIf="currentUser['isAdmin'] == true"  href="#" routerLink = "/all-users" routerLinkActive="active-link">All users</a>
+        <!-- <a *ngIf="currentUser['isAdmin'] == true" href="#" routerLink = "/all-shifts" routerLinkActive="active-link">All shifts</a> -->
+        <a href="#" routerLink = "/edit-profile" routerLinkActive="active-link">Edit Profile</a>
+        <p *ngIf="currentUser">Hello {{currentUser.fname}}</p>
+        <a href="" *ngIf="currentUser" (click)="logout()">Logout</a>
+    </div>
+</div>
+

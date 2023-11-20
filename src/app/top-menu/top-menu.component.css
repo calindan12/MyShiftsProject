@@ -1,0 +1,37 @@
+.ekart--top--bar a{
+    color: black; /* Culoarea link-urilor */
+    text-decoration: none; /* Elimină sublinierea link-urilor */
+    margin-right: 10px; /* Spațiere între link-uri */
+}
+
+.container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center; 
+    height: 20vh;
+  }
+
+  .ekart--top--bar {
+    
+    position: absolute; /* Face div-ul poziționat absolut în cadrul containerului părinte */
+    top: 0; /* Aliniază div-ul în partea de sus a ecranului */
+    right: 0; /* Aliniază div-ul în partea dreaptă a ecranului */
+    color: #fff; /* Culoarea textului pentru div */
+    padding: 10px; /* Spațiere interioară pentru conținutul din div */
+    display: flex; /* Utilizează flexbox pentru alinierea conținutului */
+    align-items: center; /* Aliniază conținutul pe verticală în centru */
+  }
+
+  .ekart--top--bar p {
+    margin: 0;
+    padding-right: 5px;
+    color: black;
+  }
+
+  .ekart--top--bar a.logout {
+    color: #ff0000; /* Culoarea pentru linkul de logout, puteți să-l modificați la culoarea dorită */
+  }
+  .ekart--top--bar a:hover {
+    color: blue; /* Culoarea link-ului la hover */
+  }
+  

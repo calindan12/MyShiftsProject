@@ -1,0 +1,37 @@
+<div class="main-area">
+    <div class="content-area">
+        <div class="header">
+            <h1>Login Page</h1>
+            <hr>
+        </div>
+        <div class="container">
+            <div class="form-area">
+                <form #myForm = "ngForm" (ngSubmit)="loginUser()">
+                    <div class="label-area">
+                        <label>Email:</label>
+                        <span *ngIf="myForm.controls['email']?.invalid && myForm.controls['email']?.touched && !myForm.controls['email'].value">Required</span>
+                        <span *ngIf="myForm.controls['email']?.errors?.['pattern']">Incorrect format email</span>
+                    </div>
+                    <input type="email" name="email" [(ngModel)]="email" required pattern="^\s*\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+                
+                    <div class="label-area">
+                        <label>Password:</label>
+                        <span *ngIf="myForm.controls['password']?.invalid && myForm.controls['password']?.touched && !myForm.controls['password'].value">Required</span>
+                        <span *ngIf="myForm.controls['password']?.errors?.['pattern']">Password must contain at least 8 characters, at least one uppercase letter, one lowercase letter, one number, and one special character</span>
+                    </div>
+                    <input type="password" name="password" [(ngModel)]="password" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
+                    
+        
+                    <button type="submit" value="Submit" [disabled] = 'myForm.invalid'  [class.btn-search-disabled]="myForm.invalid">Submit</button>
+
+                    <div>
+                        <span #param *ngIf="param">Invalid Credentials</span>
+                    </div>
+                </form>
+                <p>Don't have an account ?<a routerLink ="/user/signup" routerLinkActive ="active-link">Sign up</a><br>
+
+            </div>
+        </div>
+    </div>
+</div>
+

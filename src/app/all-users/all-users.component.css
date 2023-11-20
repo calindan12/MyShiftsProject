@@ -1,0 +1,63 @@
+.shifts-display-area{
+  width: 100%;
+  padding: 10px 15px;
+}
+
+#shifts {
+font-family: Arial, Helvetica, sans-serif;
+border-collapse: collapse;
+width: 100%;
+}
+
+#shifts td, #shifts th {
+padding: 4px;
+}
+
+
+#shifts th {
+padding-top: 5px;
+padding-bottom: 5px;
+text-align: left;
+background-color: #222;
+color: white;
+}
+
+
+/* tr{
+  margin-top: 5px;
+  margin-bottom: 5px;
+} */
+
+#shifts tbody tr:nth-of-type(even){
+  background-color: whitesmoke;
+}
+
+button{
+border: none;
+cursor: pointer;
+padding: 8px 15px;
+margin: 0px 5px;
+margin-top: 5px;
+margin-bottom: 5px;
+
+}
+
+.btn-show{
+  background-color: blue;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-delete{
+background-color: #FB5027;
+color: white;
+cursor: pointer;
+}
+
+.btn-edit{
+background-color: green;
+color: white;
+cursor: pointer;
+
+}
+

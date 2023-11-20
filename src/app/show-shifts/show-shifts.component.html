@@ -1,0 +1,34 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<top-menu></top-menu>
+<table id="shifts">
+    <thead>
+        <tr>
+            <th>Id: </th>
+            <th>Day Shift: </th>
+            <th>Start Time: </th>
+            <th>End Time: </th>
+            <th>Horly Wage: </th>
+            <th>Workplace: </th>
+            <th>Shift Name: </th>
+            <th>Profit </th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let shift of shifts">
+            <td>{{shift.id}}</td>
+            <td>{{shift.dateShift}}</td>
+            <td>{{shift.startTime}}</td>
+            <td>{{shift.endTime}}</td>
+            <td>{{shift.wage}}</td>
+            <td>{{shift.place}}</td>
+            <td>{{shift.nameShift}}</td>
+            <td>{{shift.profit}}</td>
+            <div>
+                <td><button class="btn-delete" (click) = "deleteShift((userUid) , shift.id)"><i class="fa-solid fa-trash"></i></button></td>
+                <td><button routerLink = "/admin/edit-shift/{{shift.id}}" class="btn-edit"><i class="fa-solid fa-pen-to-square"></i></button></td>
+            </div>
+            
+        </tr>
+    </tbody>
+</table>
