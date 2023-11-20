@@ -1,0 +1,4 @@
+A customer approached you with a request to create an application to track employees' working hours.
+The workplace is obliged to keep a monthly record of an employee's working hours for the purpose of calculating wages, collecting taxes, calculating expenses, etc.
+The main request is to develop an application that allows an employee to keep track of working hours and calculate how much money they should receive each month based on the number of working hours they have worked.
+In the realization of this project I used Angular and firestore database
